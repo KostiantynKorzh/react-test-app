@@ -1,15 +1,7 @@
 import React, { useEffect, useState } from 'react';
 
 import ProductService from "../../services/ProductService";
-import {
-    Box,
-    Button,
-    Card,
-    CardActions, CardContent,
-    CardMedia,
-    Grid,
-    Typography
-} from "@mui/material";
+import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from "@mui/material";
 
 export const CataloguePage = () => {
     const [ products, setProducts ] = useState([]);
@@ -27,34 +19,35 @@ export const CataloguePage = () => {
     }, [])
     return (
         <>
-            <h3>Products</h3>
-            <Box sx={{ flexGrow: 1 }}>
-            <Grid container spacing={2}>
-                {products && products.map(product => (
-                    <Grid Card xs={3}>
-                    <Card sx={{ width: 345, height: 400}}>
-                        <CardMedia
-                            component="img"
-                            height="260"
-                            image={product.thumbnail}
-                            alt={product.title}
-                        />
-                        <CardContent>
-                            <Typography gutterBottom variant="h5" component="div">
-                                {product.title}
-                            </Typography>
-                            <Typography variant="body2" color="text.secondary">
-                                {product.description}
-                            </Typography>
-                        </CardContent>
-                        <CardActions>
-                            <Button size="small">Add to cart</Button>
-                        </CardActions>
-                    </Card>
-                    </Grid>
-                ))}
-            </Grid>
-            </Box>
+            <Container>
+                <h3>Products</h3>
+                <Grid container spacing={2}>
+                    {products && products.map(product => (
+                        <Grid Card item xs={3} spacing={8}>
+                            <Card sx={{width: "100%", height: "100%"}}>
+                                <CardMedia
+                                    component="img"
+                                    width="100%"
+                                    height="260"
+                                    image={product.thumbnail}
+                                    alt={product.title}
+                                />
+                                <CardContent>
+                                    <Typography gutterBottom variant="h5" component="div">
+                                        {product.title}
+                                    </Typography>
+                                    <Typography variant="body2" color="text.secondary">
+                                        {product.description}
+                                    </Typography>
+                                </CardContent>
+                                <CardActions>
+                                    <Button size="small">Add to cart</Button>
+                                </CardActions>
+                            </Card>
+                        </Grid>
+                    ))}
+                </Grid>
+            </Container>
         </>
     );
 };
