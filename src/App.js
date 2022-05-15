@@ -12,7 +12,7 @@ function App() {
         <>
             {/*штука чтобы чекать, какой путь стоит в браущере и перенаправлять соответствующе*/}
             {/*http://localhost:3000/ - значит HomePage*/}
-            {/*http://localhost:3000/catalogur - значит CataloguePage*/}
+            {/*http://localhost:3000/catalogue - значит CataloguePage*/}
             <BrowserRouter>
                 {/*сюда ебанули хедер, шоб он был на всех страницах*/}
                 <Header/>
