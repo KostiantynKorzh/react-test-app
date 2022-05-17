@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, {useEffect, useState} from 'react';
 
 import ProductService from "../../services/ProductService";
-import { Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography } from "@mui/material";
+import {Button, Card, CardActions, CardContent, CardMedia, Container, Grid, Typography} from "@mui/material";
+import {useNavigate} from "react-router-dom";
 
 export const CataloguePage = () => {
     const [ products, setProducts ] = useState([]);
+    const navigate = useNavigate();
+
     const getAllProducts = () => {
         ProductService.getAllProducts()
             .then(response => {
@@ -14,9 +17,11 @@ export const CataloguePage = () => {
                 console.log(err)
             })
     }
+
     useEffect(() => {
         getAllProducts()
     }, [])
+
     return (
         <>
             <Container>
@@ -41,7 +46,11 @@ export const CataloguePage = () => {
                                     </Typography>
                                 </CardContent>
                                 <CardActions>
-                                    <Button size="small">Add to cart</Button>
+                                    <Button size="small" onClick={()=>{
+                                        navigate("/catalogue/"+product.id)
+                                    }}>
+                                        Read more
+                                    </Button>
                                 </CardActions>
                             </Card>
                         </Grid>
