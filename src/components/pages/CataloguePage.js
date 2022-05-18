@@ -27,7 +27,7 @@ export const CataloguePage = () => {
             <Container>
                 <h3>Products</h3>
                 <Grid container spacing={2}>
-                    {products && products.map(product => (
+                    {products.length>0 && products.map(product => (
                         <Grid Card item xs={3} spacing={8}>
                             <Card sx={{width: "100%", height: "100%"}}>
                                 <CardMedia
