@@ -17,6 +17,7 @@ export const Header = () => {
                     // заставляет ссылки стоять горизонтально (display: "flex"; в div по дефолту вертикально) и делает
                     // одинаковое расстояние между элементами и краями (justifyContent: "space-evenly")
                     style={{
+                        background: "#00b3b3",
                         display: "flex",
                         justifyContent: "space-evenly"
                     }}

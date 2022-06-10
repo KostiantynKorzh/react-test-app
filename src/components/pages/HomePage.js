@@ -8,7 +8,6 @@ import ProductService from "../../services/ProductService";
 export const HomePage = () => {
     // так нужно указывать переменные, которым ты хочешь присвоить значение и потом работать
     const [ data, setData ] = useState([]);
-    const [ products, setProducts ] = useState([]);
     const [ categories, setCategories ] = useState([]);
 
     const [ newProductTitle, setNewProductTitle ] = useState("");
@@ -24,10 +23,6 @@ export const HomePage = () => {
             .catch(err => {
                 console.log(err)
             })
-    }
-
-    // нужно написать и вывести массив. поля чекать тут https://dummyjson.com/docs/products
-    const getAllProducts = () => {
     }
 
     // юзается в таком виде, чтоб выполнить что-то при начальном рендеринге один раз

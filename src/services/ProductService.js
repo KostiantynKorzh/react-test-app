@@ -9,7 +9,12 @@ const addProduct = async (newProduct) => {
     return await axios.post(PRODUCT_URL + "add", newProduct);
 }
 
+const getProductInfo = async (id) => {
+    return await axios.get(PRODUCT_URL + id)
+}
+
 export default {
     getAllProducts,
-    addProduct
+    addProduct,
+    getProductInfo
 }
